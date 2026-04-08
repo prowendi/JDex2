@@ -45,13 +45,15 @@ public class MainActivity extends AppCompatActivity {
                 boolean hook = binding.switch2.isChecked();
                 boolean debugger = binding.switch1.isChecked();
                 boolean innerclassesFilter =binding.switch3.isChecked();
+                boolean invokeConstructors = binding.invoke.isChecked();
                 String content =
                         "targetApp=" + targetApp + "\n" +
                                 "hook=" + hook + "\n" +
                                 "invokeDebugger=" + debugger + "\n" +
                                 "whiteList=" + whiteList + "\n" +
                                 "blackList=" + blackList + "\n" +
-                                "innerclassesFilter=" + innerclassesFilter + "\n";
+                                "innerclassesFilter=" + innerclassesFilter + "\n" +
+                                "invokeConstructors=" + invokeConstructors + "\n";
 
                 writeConfigToSdcard(content);
             }
@@ -60,7 +62,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void writeConfigToSdcard(String content) {
         try {
-            File file = new File("/sdcard/config.properties");
+            File file = new File("/sdcard/Download/config.properties");
 
             FileOutputStream fos = new FileOutputStream(file, false);
             fos.write(content.getBytes());

